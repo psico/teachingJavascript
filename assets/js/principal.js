@@ -6,10 +6,20 @@ function validarFormulario(e) {
 
     for (let cadaCampo of valorDosCampos) {
         if (cadaCampo.value) {
-            console.log("O campo está preenchido com: " + cadaCampo.value);
+            //console.log("O campo está preenchido com: " + cadaCampo.value);
         } else {
-            console.log("existe algum campo em branco");
-            formularioValido = false
+            //console.log("existe algum campo em branco");
+            formularioValido = false;
+        }        
+
+        if (cadaCampo.className === "usuario validar") {
+
+            if( cadaCampo.value.length <= 2 || cadaCampo.value.length >= 13 ) {
+                console.log("o quantidade de caractes é invalida");
+                console.log(cadaCampo.value.length);
+                formularioValido = false;
+            }
+
         }
     }
 
